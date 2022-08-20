@@ -6,13 +6,22 @@ function getInputFiledValueById(inputId) {
     return inputFiledValueAmount;
 }
 
+function getInputFiledValueById(inputId) {
+    const inputFiled = document.getElementById(inputId);
+    const inputFiledValueString = inputFiled.value;
+    const inputFiledValueAmount = parseFloat(inputFiledValueString);
+    inputFiled.value = '';
+    return inputFiledValueAmount;
+}
+
+
 document.getElementById('calculate').addEventListener('click', function () {
+    const income = getInputFiledValueById('income')
     const foodExpens = getInputFiledValueById('foon-filed');
     const rentExpens = getInputFiledValueById('rent-filed');
     const clothExpens = getInputFiledValueById('cloth-filed');
 
     const totalExpens = foodExpens + rentExpens + clothExpens;
-    const income = getInputFiledValueById('income')
 
     const totalBalance = income - (foodExpens + rentExpens + clothExpens);
 
@@ -21,12 +30,9 @@ document.getElementById('calculate').addEventListener('click', function () {
 
     const displaTotalBalance = document.getElementById('total-display');
     displaTotalBalance.innerText = totalBalance;
+
 });
-
-
-
 document.getElementById('btn-save').addEventListener('click', function () {
-
 
     const totalBalanceElement = document.getElementById('total-display');
     const totalBalanceString = totalBalanceElement.innerText;
@@ -41,15 +47,11 @@ document.getElementById('btn-save').addEventListener('click', function () {
     const showSave = document.getElementById('show-save');
     showSave.innerText = saveAmount;
 
-
     const FinalRemainingBalance = totalBalanceAmount - saveAmount;
 
     const showFinalBalance = document.getElementById('remaining-balance');
 
-
     showFinalBalance.innerText = FinalRemainingBalance;
-
-
 })
 
 

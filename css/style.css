@@ -6,26 +6,30 @@
 header {
     text-align: center;
     font-weight: 1000;
-    /* text-shadow: 5px 2px greenyellow; */
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-shadow: 5px 2px greenyellow;
 }
 
-body {}
+body {
+    justify-content: center;
+}
 
 .main {
     text-align: center;
     display: flex;
     justify-content: center;
 
-    /* color: black ; */
+    color: black;
 }
 
-.main h1 {}
-
 .container {
+    padding-top: 30px;
+    padding-bottom: 30px;
     text-align: center;
     border-radius: 10px;
     width: 800px;
-    /* background-color: rgb(135 135 135); */
+    background-color: rgb(212, 200, 200);
 }
 
 .container ul li {
